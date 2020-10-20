@@ -1,1 +1,3 @@
-streamlit run file.py
+- !pip install streamlit
+- add streamlit's path to PATH
+- streamlit run file.py

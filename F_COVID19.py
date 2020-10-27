@@ -52,6 +52,6 @@ else:
 
 st.write("""
          <h4 style="text-align:center">
-         <a href="opendata.ecdc.europa.eu/covid19">Source of data</a>
+         <a href="https://opendata.ecdc.europa.eu/covid19">Source of data</a>
          </h4>
          """, unsafe_allow_html=True)

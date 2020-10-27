@@ -4,7 +4,7 @@ import plotly.express as px
 import pandas as pd
 
 
-st.write('<h1 style="text-align:center">Fuck COVID-19</h1>',
+st.write('<h1 style="text-align:center">F COVID-19</h1>',
          unsafe_allow_html=True
          )
 

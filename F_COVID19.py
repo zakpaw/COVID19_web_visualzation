@@ -50,5 +50,8 @@ else:
              unsafe_allow_html=True)
     st.plotly_chart(fig, use_container_width=True)
 
-st.write('<a href="opendata.ecdc.europa.eu/covid19">Source of data</a>',
-         unsafe_allow_html=True)
+st.write("""
+         <h4 style="text-align:center">
+         <a href="opendata.ecdc.europa.eu/covid19">Source of data</a>
+         </h4>
+         """, unsafe_allow_html=True)

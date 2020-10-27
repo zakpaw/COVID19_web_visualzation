@@ -50,3 +50,7 @@ else:
                      ' vs '.join([i.replace('_', ' ') for i in countries])),
              unsafe_allow_html=True)
     st.plotly_chart(fig, use_container_width=True)
+
+'''
+Data Source: opendata.ecdc.europa.eu/covid19
+'''

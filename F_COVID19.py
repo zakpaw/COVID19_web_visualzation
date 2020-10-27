@@ -4,9 +4,8 @@ import plotly.express as px
 import pandas as pd
 
 
-st.write('<h1 style="text-align:center">F COVID-19</h1>',
-         unsafe_allow_html=True
-         )
+st.write('<h1 style="text-align:center">F COVID-19</h1>', 
+         unsafe_allow_html=True)         
 
 
 @st.cache
@@ -51,6 +50,5 @@ else:
              unsafe_allow_html=True)
     st.plotly_chart(fig, use_container_width=True)
 
-'''
-Data Source: opendata.ecdc.europa.eu/covid19
-'''
+st.write('<a href="opendata.ecdc.europa.eu/covid19">Source of data</a>',
+         unsafe_allow_html=True)

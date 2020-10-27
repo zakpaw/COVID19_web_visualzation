@@ -1,15 +1,19 @@
+from datetime import datetime
 import streamlit as st
 import plotly.express as px
 import pandas as pd
 
 
-st.write('<h1 style="text-align:center">Fuck COVID-19</h1>', unsafe_allow_html=True)
+st.write('<h1 style="text-align:center">Fuck COVID-19</h1>',
+         unsafe_allow_html=True
+         )
+
 
 @st.cache
 def preper_data():
-    URL = 'https://opendata.ecdc.europa.eu/covid19/casedistribution/csv'
+    URL = 'https://opendata.ecdc.europa.eu/covid19/casedistribution/csv/data.csv'
     df = pd.read_csv(URL, parse_dates=['dateRep'], index_col='dateRep')
-    df = df[df.index < '2020-10-19']
+    df = df[df.index < datetime.today().strftime('%Y-%m-%d')]
 
     to_drop = ['day', 'month', 'year', 'geoId', 'continentExp',
                'Cumulative_number_for_14_days_of_COVID-19_cases_per_100000']
@@ -39,10 +43,10 @@ else:
                   y=feature,
                   color='country',
                   hover_name='country_code',
-                  labels={'x':''})
+                  labels={'x': ''})
 
-    st.write('<h3 style="text-align:center"> \
-            {}: {}</h3>'.format(feature.strip('_').title(),
-                                ' vs '.join([i.replace('_', ' ') for i in countries])),
+    st.write('<h3 style="text-align:center"> {}: {}</h3>'
+             .format(feature.strip('_').title(),
+                     ' vs '.join([i.replace('_', ' ') for i in countries])),
              unsafe_allow_html=True)
     st.plotly_chart(fig, use_container_width=True)

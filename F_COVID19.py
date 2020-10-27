@@ -13,7 +13,7 @@ st.write('<h1 style="text-align:center">F COVID-19</h1>',
 def preper_data():
     URL = 'https://opendata.ecdc.europa.eu/covid19/casedistribution/csv/data.csv'
     df = pd.read_csv(URL, parse_dates=['dateRep'], index_col='dateRep')
-    df = df[df.index < datetime.today().strftime('%Y-%m-%d')]
+    df = df[df.index <= datetime.today().strftime('%Y-%m-%d')]
 
     to_drop = ['day', 'month', 'year', 'geoId', 'continentExp',
                'Cumulative_number_for_14_days_of_COVID-19_cases_per_100000']
